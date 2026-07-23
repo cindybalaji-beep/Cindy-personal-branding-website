@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--
+  CINDY BALAJI — PERSONAL SITE
+  ============================
+  HOW TO USE THIS FILE:
+  1. This is a single, self-contained HTML file — no build step needed.
+  2. Drop it into your GitHub Pages repo as `index.html` (replacing whatever's there).
+  3. Search for "EDIT:" comments throughout — those mark the spots to swap in
+     your real content (posts, bio, links, email).
+  4. The "Start Here" and "All Writing" sections are both hand-editable lists.
+     When you publish a new post on Substack, just copy its title/link/dek
+     into a new <article> block in the "All Writing" feed (copy an existing
+     one as a template — look for "EDIT: duplicate this block for a new post").
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cindy Balaji</title>
+<meta name="description" content="Cindy Balaji — writing on AI, business, and the gap between credentials and capability.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #FCFCFA;
+    --paper-alt: #F5F2E9;
+    --ink: #1B1A17;
+    --ink-soft: #55524A;
+    --ink-faint: #8A8678;
+    --ledger: #1F4D3A;
+    --ledger-soft: #E7EEEA;
+    --brass: #9C7A3C;
+    --line: #E4E0D3;
+
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--ledger); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+
+  /* .wrap centers content and gives consistent horizontal breathing room.
+     Every section — whether full-bleed colored or not — nests its content
+     inside one of these, so spacing never depends on section background. */
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- HEADER ---------- */
+
+  header.site {
+    padding: 56px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  .site-name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .site-tag {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--brass);
+    letter-spacing: 0.02em;
+  }
+
+  nav.site-nav {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  nav.site-nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  nav.site-nav a:hover {
+    color: var(--ledger);
+    border-bottom-color: var(--ledger);
+  }
+
+  /* ---------- HERO ---------- */
+
+  section.hero {
+    padding: 64px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  /* ---------- SECTION LABELS ---------- */
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin: 0 0 28px;
+  }
+
+  /* ---------- START HERE (true full-bleed band) ---------- */
+
+  section.start-here {
+    background: var(--paper-alt);
+    padding: 56px 0;
+  }
+
+  .pick {
+    display: block;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+  }
+  .pick:first-of-type { padding-top: 0; }
+  .pick:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+  .pick .tag {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--ledger);
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .pick h3 {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0 0 6px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .pick p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- ALL WRITING FEED ---------- */
+
+  section.feed {
+    padding: 56px 0;
+  }
+
+  article.post {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  article.post:first-of-type { padding-top: 0; }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+  }
+
+  .post-meta .tag { color: var(--ledger); }
+  .post-meta .tag.essay { color: var(--brass); }
+  .post-meta .date { color: var(--ink-faint); }
+  .post-meta .dot { color: var(--ink-faint); }
+
+  article.post h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 6px;
+    line-height: 1.35;
+  }
+
+  article.post h3 a { color: var(--ink); text-decoration: none; }
+  article.post h3 a:hover { color: var(--ledger); }
+
+  article.post p.dek {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- ABOUT (true full-bleed band) ---------- */
+
+  section.about {
+    padding: 56px 0;
+    background: var(--ledger-soft);
+  }
+
+  .about p {
+    font-size: 16px;
+    color: var(--ink);
+    max-width: 58ch;
+  }
+
+  .about p.byline {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ledger);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  footer.site {
+    padding: 40px 0 64px;
+  }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { color: var(--ink-soft); text-decoration: none; }
+  .footer-links a:hover { color: var(--ledger); }
+
+  .footer-note { color: var(--ink-faint); }
+
+  /* ---------- FOCUS STATES (accessibility) ---------- */
+
+  a:focus-visible {
+    outline: 2px solid var(--ledger);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 520px) {
+    header.site, section.hero, section.start-here, section.feed, section.about, footer.site {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <div class="site-top">
+        <!-- EDIT: your name -->
+        <div class="site-name">Cindy Balaji</div>
+      </div>
+      <nav class="site-nav">
+        <a href="#start-here">Start Here</a>
+        <a href="#writing">Writing</a>
+        <a href="#about">About</a>
+        <!-- EDIT: link to your actual Substack -->
+        <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Subscribe</a>
+        <!-- EDIT: swap the email if this ever changes -->
+        <a href="mailto:cindybalaji@gmail.com">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <!-- EDIT: your thesis line — this is the one sentence that should stop someone scrolling -->
+      <h1>I make AI make sense — for people who were taught the old rules still applied.</h1>
+      <!-- EDIT: supporting line -->
+      <p>Case studies, competitor breakdowns, and the occasional reckoning with a CPA license — written for people who want to feel capable, not behind.</p>
+    </div>
+  </section>
+
+  <section class="start-here" id="start-here">
+    <div class="wrap">
+      <p class="section-label">Start here</p>
+
+      <!-- EDIT: your 3–4 strongest pieces once published. Duplicate a .pick block for more. -->
+      <a class="pick" href="#">
+        <span class="tag">CASE STUDY</span>
+        <h3>Allbirds Isn't a Shoe Company Anymore — Here's What Actually Changed</h3>
+        <p>The headline everyone saw. The mechanics nobody explained.</p>
+      </a>
+
+      <a class="pick" href="#">
+        <span class="tag">INDUSTRY</span>
+        <h3>PropTech's Quiet AI Takeover</h3>
+        <p>What legacy real estate software isn't telling you about the disruption already underway.</p>
+      </a>
+
+      <a class="pick" href="#">
+        <span class="tag">ESSAY</span>
+        <h3>Sindhuri, Not Cindy</h3>
+        <p>What I gave up to fit in — and what I'm trying to get back.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="feed" id="writing">
+    <div class="wrap">
+      <p class="section-label">All writing</p>
+
+      <!-- EDIT: duplicate this block for a new post. Tag options: CASE STUDY / INDUSTRY / ESSAY / DEMO -->
+      <article class="post">
+        <div class="post-meta">
+          <span class="tag">CASE STUDY</span>
+          <span class="dot">·</span>
+          <span class="date">Jul 2026</span>
+        </div>
+        <h3><a href="#">Allbirds Isn't a Shoe Company Anymore</a></h3>
+        <p class="dek">The headline everyone saw. The mechanics nobody explained.</p>
+      </article>
+
+      <article class="post">
+        <div class="post-meta">
+          <span class="tag essay">ESSAY</span>
+          <span class="dot">·</span>
+          <span class="date">Jul 2026</span>
+        </div>
+        <h3><a href="#">Sindhuri, Not Cindy</a></h3>
+        <p class="dek">What I gave up to fit in — and what I'm trying to get back.</p>
+      </article>
+
+      <article class="post">
+        <div class="post-meta">
+          <span class="tag">INDUSTRY</span>
+          <span class="dot">·</span>
+          <span class="date">Jun 2026</span>
+        </div>
+        <h3><a href="#">PropTech's Quiet AI Takeover</a></h3>
+        <p class="dek">What legacy real estate software isn't telling you about the disruption already underway.</p>
+      </article>
+
+      <article class="post">
+        <div class="post-meta">
+          <span class="tag essay">ESSAY</span>
+          <span class="dot">·</span>
+          <span class="date">Jun 2026</span>
+        </div>
+        <h3><a href="#">The Test I Never Failed, Until I Did</a></h3>
+        <p class="dek">On being great at school and bad at knowing what I actually wanted.</p>
+      </article>
+
+      <article class="post">
+        <div class="post-meta">
+          <span class="tag">DEMO</span>
+          <span class="dot">·</span>
+          <span class="date">Jun 2026</span>
+        </div>
+        <h3><a href="#">The Old Way vs. the AI Way: Building an FP&A Model</a></h3>
+        <p class="dek">A side-by-side of what used to take a week, now done in an afternoon.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="byline">About</p>
+      <!-- EDIT: your real bio — keep it to one tight paragraph -->
+      <p>I'm a CPA by training, a recovering by-the-book test-taker by temperament, and currently spending my hours figuring out how AI is actually changing finance, business, and strategy — not the headline version, the real one. I write here and on Substack, and occasionally get on camera to show my work.</p>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="footer-row">
+        <div class="footer-links">
+          <!-- EDIT: your real links -->
+          <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="https://www.linkedin.com/in/cindybalaji/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:cindybalaji@gmail.com">Email</a>
+        </div>
+        <div class="footer-note">&copy; 2026 Cindy Balaji</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
