@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
   CINDY BALAJI — PERSONAL SITE
@@ -7,10 +8,10 @@
   2. Drop it into your GitHub Pages repo as `index.html` (replacing whatever's there).
   3. Search for "EDIT:" comments throughout — those mark the spots to swap in
      your real content (posts, bio, links, email).
-  4. The "Start Here" and "All Writing" sections are both hand-editable lists.
-     When you publish a new post on Substack, just copy its title/link/dek
-     into a new <article> block in the "All Writing" feed (copy an existing
-     one as a template — look for "EDIT: duplicate this block for a new post").
+  4. Every article link has a placeholder Substack URL. Search for
+     "PASTE-SUBSTACK-URL" to find every spot that needs your real post link
+     once it's published. Until you update it, it safely points to your
+     Substack homepage instead of a broken link.
 -->
 <html lang="en">
 <head>
@@ -66,9 +67,6 @@
   a { color: var(--ledger); text-decoration-thickness: 1px; text-underline-offset: 3px; }
   a:hover { color: var(--ink); }
 
-  /* .wrap centers content and gives consistent horizontal breathing room.
-     Every section — whether full-bleed colored or not — nests its content
-     inside one of these, so spacing never depends on section background. */
   .wrap {
     max-width: 680px;
     margin: 0 auto;
@@ -97,13 +95,6 @@
     letter-spacing: -0.01em;
   }
 
-  .site-tag {
-    font-family: var(--mono);
-    font-size: 12.5px;
-    color: var(--brass);
-    letter-spacing: 0.02em;
-  }
-
   nav.site-nav {
     margin-top: 22px;
     display: flex;
@@ -111,6 +102,7 @@
     gap: 22px;
     font-family: var(--mono);
     font-size: 13px;
+    flex-wrap: wrap;
   }
 
   nav.site-nav a {
@@ -194,6 +186,57 @@
   }
 
   .pick p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- CASE STUDIES (dedicated section) ---------- */
+
+  section.case-studies {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .case-studies .section-sub {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: -16px 0 28px;
+    max-width: 54ch;
+  }
+
+  article.case {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  article.case:first-of-type { padding-top: 0; }
+
+  .case-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+  }
+
+  .case-meta .tag { color: var(--ledger); }
+  .case-meta .date { color: var(--ink-faint); }
+  .case-meta .dot { color: var(--ink-faint); }
+
+  article.case h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 6px;
+    line-height: 1.35;
+  }
+
+  article.case h3 a { color: var(--ink); text-decoration: none; }
+  article.case h3 a:hover { color: var(--ledger); }
+
+  article.case p.dek {
     margin: 0;
     font-size: 15px;
     color: var(--ink-soft);
@@ -299,7 +342,7 @@
   }
 
   @media (max-width: 520px) {
-    header.site, section.hero, section.start-here, section.feed, section.about, footer.site {
+    header.site, section.hero, section.start-here, section.case-studies, section.feed, section.about, footer.site {
       padding-top: 40px;
       padding-bottom: 40px;
     }
@@ -316,6 +359,7 @@
       </div>
       <nav class="site-nav">
         <a href="#start-here">Start Here</a>
+        <a href="#case-studies">Case Studies</a>
         <a href="#writing">Writing</a>
         <a href="#about">About</a>
         <!-- EDIT: link to your actual Substack -->
@@ -329,9 +373,9 @@
   <section class="hero">
     <div class="wrap">
       <!-- EDIT: your thesis line — this is the one sentence that should stop someone scrolling -->
-      <h1>I make AI make sense — for people who were taught the old rules still applied.</h1>
+      <h1>I help mission-driven founders build meaningful companies.</h1>
       <!-- EDIT: supporting line -->
-      <p>Case studies, competitor breakdowns, and the occasional reckoning with a CPA license — written for people who want to feel capable, not behind.</p>
+      <p>I combine strategy, finance, operations, and writing to help ambitious teams make better decisions.</p>
     </div>
   </section>
 
@@ -340,23 +384,56 @@
       <p class="section-label">Start here</p>
 
       <!-- EDIT: your 3–4 strongest pieces once published. Duplicate a .pick block for more. -->
-      <a class="pick" href="#">
+      <!-- EDIT: replace PASTE-SUBSTACK-URL-1 with the real Substack post link -->
+      <a class="pick" href="PASTE-SUBSTACK-URL-1">
         <span class="tag">CASE STUDY</span>
         <h3>Allbirds Isn't a Shoe Company Anymore — Here's What Actually Changed</h3>
         <p>The headline everyone saw. The mechanics nobody explained.</p>
       </a>
 
-      <a class="pick" href="#">
+      <!-- EDIT: replace PASTE-SUBSTACK-URL-2 with the real Substack post link -->
+      <a class="pick" href="PASTE-SUBSTACK-URL-2">
         <span class="tag">INDUSTRY</span>
         <h3>PropTech's Quiet AI Takeover</h3>
         <p>What legacy real estate software isn't telling you about the disruption already underway.</p>
       </a>
 
-      <a class="pick" href="#">
+      <!-- EDIT: replace PASTE-SUBSTACK-URL-3 with the real Substack post link -->
+      <a class="pick" href="PASTE-SUBSTACK-URL-3">
         <span class="tag">ESSAY</span>
         <h3>Sindhuri, Not Cindy</h3>
         <p>What I gave up to fit in — and what I'm trying to get back.</p>
       </a>
+    </div>
+  </section>
+
+  <section class="case-studies" id="case-studies">
+    <div class="wrap">
+      <p class="section-label">Case studies</p>
+      <p class="section-sub">Deep dives into how real companies are actually pivoting to AI — the mechanics behind the headlines, not just the announcement.</p>
+
+      <!-- EDIT: duplicate this block for each new case study. Replace the PASTE-SUBSTACK-URL placeholder with the real post link once it's published. -->
+      <article class="case">
+        <div class="case-meta">
+          <span class="tag">CASE STUDY</span>
+          <span class="dot">·</span>
+          <span class="date">Jul 2026</span>
+        </div>
+        <h3><a href="PASTE-SUBSTACK-URL-4">Allbirds Isn't a Shoe Company Anymore</a></h3>
+        <p class="dek">The headline everyone saw. The mechanics nobody explained.</p>
+      </article>
+
+      <article class="case">
+        <div class="case-meta">
+          <span class="tag">CASE STUDY</span>
+          <span class="dot">·</span>
+          <span class="date">Jun 2026</span>
+        </div>
+        <h3><a href="PASTE-SUBSTACK-URL-5">PropTech's Quiet AI Takeover</a></h3>
+        <p class="dek">What legacy real estate software isn't telling you about the disruption already underway.</p>
+      </article>
+
+      <!-- EDIT: add more <article class="case"> blocks here as you publish more case studies -->
     </div>
   </section>
 
@@ -365,13 +442,14 @@
       <p class="section-label">All writing</p>
 
       <!-- EDIT: duplicate this block for a new post. Tag options: CASE STUDY / INDUSTRY / ESSAY / DEMO -->
+      <!-- EDIT: replace PASTE-SUBSTACK-URL with the real post link -->
       <article class="post">
         <div class="post-meta">
           <span class="tag">CASE STUDY</span>
           <span class="dot">·</span>
           <span class="date">Jul 2026</span>
         </div>
-        <h3><a href="#">Allbirds Isn't a Shoe Company Anymore</a></h3>
+        <h3><a href="PASTE-SUBSTACK-URL-6">Allbirds Isn't a Shoe Company Anymore</a></h3>
         <p class="dek">The headline everyone saw. The mechanics nobody explained.</p>
       </article>
 
@@ -381,7 +459,7 @@
           <span class="dot">·</span>
           <span class="date">Jul 2026</span>
         </div>
-        <h3><a href="#">Sindhuri, Not Cindy</a></h3>
+        <h3><a href="PASTE-SUBSTACK-URL-7">Sindhuri, Not Cindy</a></h3>
         <p class="dek">What I gave up to fit in — and what I'm trying to get back.</p>
       </article>
 
@@ -391,7 +469,7 @@
           <span class="dot">·</span>
           <span class="date">Jun 2026</span>
         </div>
-        <h3><a href="#">PropTech's Quiet AI Takeover</a></h3>
+        <h3><a href="PASTE-SUBSTACK-URL-8">PropTech's Quiet AI Takeover</a></h3>
         <p class="dek">What legacy real estate software isn't telling you about the disruption already underway.</p>
       </article>
 
@@ -401,7 +479,7 @@
           <span class="dot">·</span>
           <span class="date">Jun 2026</span>
         </div>
-        <h3><a href="#">The Test I Never Failed, Until I Did</a></h3>
+        <h3><a href="PASTE-SUBSTACK-URL-9">The Test I Never Failed, Until I Did</a></h3>
         <p class="dek">On being great at school and bad at knowing what I actually wanted.</p>
       </article>
 
@@ -411,7 +489,7 @@
           <span class="dot">·</span>
           <span class="date">Jun 2026</span>
         </div>
-        <h3><a href="#">The Old Way vs. the AI Way: Building an FP&A Model</a></h3>
+        <h3><a href="PASTE-SUBSTACK-URL-10">The Old Way vs. the AI Way: Building an FP&A Model</a></h3>
         <p class="dek">A side-by-side of what used to take a week, now done in an afternoon.</p>
       </article>
     </div>
