@@ -21,7 +21,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8D11C47B13');
 </script>
 <meta charset="UTF-8">
@@ -83,7 +82,7 @@
   .site-top {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
     gap: 12px 24px;
   }
@@ -94,6 +93,19 @@
     font-weight: 600;
     letter-spacing: -0.01em;
   }
+
+  /* ---------- SITE PHOTO ---------- */
+
+  .site-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid var(--line);
+  }
+
+  /* ---------- NAV ---------- */
 
   nav.site-nav {
     margin-top: 22px;
@@ -150,7 +162,7 @@
     margin: 0 0 28px;
   }
 
-  /* ---------- START HERE (true full-bleed band) ---------- */
+  /* ---------- START HERE ---------- */
 
   section.start-here {
     background: var(--paper-alt);
@@ -191,7 +203,7 @@
     color: var(--ink-soft);
   }
 
-  /* ---------- CASE STUDIES (dedicated section) ---------- */
+  /* ---------- CASE STUDIES ---------- */
 
   section.case-studies {
     padding: 56px 0;
@@ -286,7 +298,7 @@
     color: var(--ink-soft);
   }
 
-  /* ---------- ABOUT (true full-bleed band) ---------- */
+  /* ---------- ABOUT ---------- */
 
   section.about {
     padding: 56px 0;
@@ -330,7 +342,7 @@
 
   .footer-note { color: var(--ink-faint); }
 
-  /* ---------- FOCUS STATES (accessibility) ---------- */
+  /* ---------- FOCUS STATES ---------- */
 
   a:focus-visible {
     outline: 2px solid var(--ledger);
@@ -354,9 +366,7 @@
   <header class="site">
     <div class="wrap">
       <div class="site-top">
-        <!-- EDIT: your name -->
         <div class="site-name">Cindy Balaji</div>
-        <!-- EDIT: replace "photo.jpg" with your actual image filename/path once uploaded to your repo (e.g. "images/cindy.jpg") -->
         <img src="selfie.jpg" alt="Cindy Balaji" class="site-photo">
       </div>
       <nav class="site-nav">
@@ -364,9 +374,7 @@
         <a href="#case-studies">Case Studies</a>
         <a href="#writing">Writing</a>
         <a href="#about">About</a>
-        <!-- EDIT: link to your actual Substack -->
         <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Subscribe</a>
-        <!-- EDIT: swap the email if this ever changes -->
         <a href="mailto:cindybalaji@gmail.com">Email</a>
       </nav>
     </div>
@@ -374,9 +382,7 @@
 
   <section class="hero">
     <div class="wrap">
-      <!-- EDIT: your thesis line — this is the one sentence that should stop someone scrolling -->
       <h1>I help mission-driven founders build meaningful companies.</h1>
-      <!-- EDIT: supporting line -->
       <p>I combine strategy, finance, operations, and writing to help ambitious teams make better decisions.</p>
     </div>
   </section>
@@ -385,22 +391,18 @@
     <div class="wrap">
       <p class="section-label">Start here</p>
 
-      <!-- EDIT: your 3–4 strongest pieces once published. Duplicate a .pick block for more. -->
-      <!-- EDIT: replace PASTE-SUBSTACK-URL-1 with the real Substack post link -->
       <a class="pick" href="PASTE-SUBSTACK-URL-1">
         <span class="tag">CASE STUDY</span>
         <h3>Allbirds Isn't a Shoe Company Anymore — Here's What Actually Changed</h3>
         <p>The headline everyone saw. The mechanics nobody explained.</p>
       </a>
 
-      <!-- EDIT: replace PASTE-SUBSTACK-URL-2 with the real Substack post link -->
       <a class="pick" href="PASTE-SUBSTACK-URL-2">
         <span class="tag">INDUSTRY</span>
         <h3>PropTech's Quiet AI Takeover</h3>
         <p>What legacy real estate software isn't telling you about the disruption already underway.</p>
       </a>
 
-      <!-- EDIT: replace PASTE-SUBSTACK-URL-3 with the real Substack post link -->
       <a class="pick" href="PASTE-SUBSTACK-URL-3">
         <span class="tag">ESSAY</span>
         <h3>Sindhuri, Not Cindy</h3>
@@ -414,7 +416,6 @@
       <p class="section-label">Case studies</p>
       <p class="section-sub">Deep dives into how real companies are actually pivoting to AI — the mechanics behind the headlines, not just the announcement.</p>
 
-      <!-- EDIT: duplicate this block for each new case study. Replace the PASTE-SUBSTACK-URL placeholder with the real post link once it's published. -->
       <article class="case">
         <div class="case-meta">
           <span class="tag">CASE STUDY</span>
@@ -434,8 +435,6 @@
         <h3><a href="PASTE-SUBSTACK-URL-5">PropTech's Quiet AI Takeover</a></h3>
         <p class="dek">What legacy real estate software isn't telling you about the disruption already underway.</p>
       </article>
-
-      <!-- EDIT: add more <article class="case"> blocks here as you publish more case studies -->
     </div>
   </section>
 
@@ -443,8 +442,6 @@
     <div class="wrap">
       <p class="section-label">All writing</p>
 
-      <!-- EDIT: duplicate this block for a new post. Tag options: CASE STUDY / INDUSTRY / ESSAY / DEMO -->
-      <!-- EDIT: replace PASTE-SUBSTACK-URL with the real post link -->
       <article class="post">
         <div class="post-meta">
           <span class="tag">CASE STUDY</span>
@@ -500,7 +497,6 @@
   <section class="about" id="about">
     <div class="wrap">
       <p class="byline">About</p>
-      <!-- EDIT: your real bio — keep it to one tight paragraph -->
       <p>I'm a CPA by training, a recovering by-the-book test-taker by temperament, and currently spending my hours figuring out how AI is actually changing finance, business, and strategy — not the headline version, the real one. I write here and on Substack, and occasionally get on camera to show my work.</p>
     </div>
   </section>
@@ -509,7 +505,6 @@
     <div class="wrap">
       <div class="footer-row">
         <div class="footer-links">
-          <!-- EDIT: your real links -->
           <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Substack</a>
           <a href="https://www.linkedin.com/in/cindybalaji/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:cindybalaji@gmail.com">Email</a>
