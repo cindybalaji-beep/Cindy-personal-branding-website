@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8D11C47B13"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8D11C47B13');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preparing a Series A Marketplace for a $15M Debt Fundraise — Cindy Balaji</title>
+  <meta name="description" content="How I managed the audit process and financial preparation that supported Chairish's $15 million debt raise.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#FCFCFA;--paper-alt:#F5F2E9;--ink:#1B1A17;--ink-soft:#55524A;--ink-faint:#8A8678;--ledger:#1F4D3A;--ledger-soft:#E7EEEA;--brass:#9C7A3C;--line:#E4E0D3;--serif:'Fraunces',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--mono:'IBM Plex Mono','Courier New',monospace;}
+    *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:var(--ledger);text-decoration-thickness:1px;text-underline-offset:3px;}a:hover{color:var(--ink);}
+    .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
+    header.site{padding:40px 0 28px;border-bottom:1px solid var(--line);}
+    .site-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 24px;}
+    .site-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;}
+    .site-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;border:1.5px solid var(--line);}
+    nav.site-nav{margin-top:16px;display:flex;align-items:center;gap:20px;font-family:var(--mono);font-size:12px;flex-wrap:wrap;}
+    nav.site-nav a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;}
+    nav.site-nav a:hover{color:var(--ledger);border-bottom-color:var(--ledger);}
+    .cs-header{padding:64px 0 48px;border-bottom:1px solid var(--line);}
+    .cs-meta{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;color:var(--ink-faint);margin-bottom:20px;}
+    .cs-meta .tag{color:var(--ledger);}.cs-meta .dot{color:var(--line);}
+    .cs-title{font-family:var(--serif);font-size:clamp(26px,4vw,36px);font-weight:500;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);margin:0 0 20px;}
+    .cs-dek{font-size:17px;color:var(--ink-soft);max-width:54ch;line-height:1.6;margin:0 0 32px;}
+    .outcome-pills{display:flex;flex-wrap:wrap;gap:10px;}
+    .pill{display:inline-flex;align-items:center;padding:6px 14px;background:var(--ledger-soft);border-radius:999px;font-family:var(--mono);font-size:11.5px;color:var(--ledger);letter-spacing:0.04em;}
+    .cs-body{padding:56px 0 80px;}
+    .cs-body h2{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin:52px 0 16px;letter-spacing:-0.01em;}
+    .cs-body h2:first-child{margin-top:0;}
+    .cs-body h3{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.08em;margin:36px 0 12px;}
+    .cs-body p{font-size:16px;color:var(--ink-soft);line-height:1.8;margin:0 0 18px;max-width:62ch;}
+    .cs-body p strong{color:var(--ink);font-weight:600;}
+    .cs-body ul{margin:0 0 18px 0;padding-left:20px;}
+    .cs-body ul li{font-size:16px;color:var(--ink-soft);line-height:1.75;margin-bottom:6px;}
+    .callout{background:var(--paper-alt);border-left:3px solid var(--ledger);padding:16px 20px;margin:24px 0;font-size:15px;color:var(--ink);line-height:1.65;}
+    .callout strong{color:var(--ledger);}
+    .cs-divider{border:none;border-top:1px solid var(--line);margin:48px 0;}
+    .outcome-block{background:var(--ledger-soft);border-radius:4px;padding:28px;margin:40px 0;}
+    .outcome-block h3{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ledger);margin:0 0 16px;}
+    .outcome-block .big-stat{font-family:var(--serif);font-size:36px;font-weight:500;color:var(--ink);line-height:1;margin-bottom:6px;}
+    .outcome-block .stat-label{font-size:14px;color:var(--ink-soft);margin-bottom:20px;}
+    .next-cases{border-top:1px solid var(--line);padding:40px 0 64px;}
+    .next-cases .section-label{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);margin:0 0 24px;}
+    .next-link{display:block;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;transition:opacity 0.15s;}
+    .next-link:last-child{border-bottom:none;}.next-link:hover{opacity:0.65;}
+    .next-link .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;color:var(--ledger);display:block;margin-bottom:6px;}
+    .next-link h3{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin:0;line-height:1.35;}
+    footer.site{padding:36px 0 56px;border-top:1px solid var(--line);}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:12px;}
+    .footer-links{display:flex;gap:18px;}.footer-links a{color:var(--ink-soft);text-decoration:none;}.footer-links a:hover{color:var(--ledger);}
+    .footer-note{color:var(--ink-faint);}
+    a:focus-visible{outline:2px solid var(--ledger);outline-offset:2px;}
+    @media(max-width:520px){.cs-header{padding:44px 0 36px;}.cs-body{padding:40px 0 56px;}.outcome-block{padding:20px;}}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <div class="site-top">
+        <a href="/" class="site-name">Cindy Balaji</a>
+        <img src="selfie.jpg" alt="Cindy Balaji" class="site-photo">
+      </div>
+      <nav class="site-nav">
+        <a href="/#start-here">Start Here</a>
+        <a href="/#case-studies">Case Studies</a>
+        <a href="/#writing">Writing</a>
+        <a href="/#about">About</a>
+        <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Subscribe</a>
+        <a href="mailto:cindybalaji@gmail.com">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="cs-header">
+    <div class="wrap">
+      <div class="cs-meta">
+        <span class="tag">FINANCE & DECISION SYSTEMS</span>
+        <span class="dot">·</span>
+        <span>Chairish · Series A Marketplace</span>
+      </div>
+      <h1 class="cs-title">Preparing a Series A Marketplace for a $15 Million Debt Fundraise</h1>
+      <p class="cs-dek">How I managed the audit process, coordinated cross-functional diligence preparation, and helped Chairish build the financial credibility required to close a $15M debt facility.</p>
+      <div class="outcome-pills">
+        <span class="pill">$15M debt raise supported</span>
+        <span class="pill">First external audit managed</span>
+        <span class="pill">Cross-functional diligence coordination</span>
+        <span class="pill">Series A · Consumer marketplace</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-body">
+    <div class="wrap">
+
+      <h2>The Business Context</h2>
+      <p>As Chairish grew, the company pursued a $15 million debt facility to support its next stage of expansion. Debt could provide additional capital without requiring an equity financing, but institutional lenders required a higher level of financial diligence than the company had previously experienced. Chairish needed to complete an audit and provide lenders with confidence that its financial statements, controls, and supporting records were reliable.</p>
+      <p>I was responsible for managing the audit process and helping prepare the company for the financing.</p>
+
+      <h2>The Problem</h2>
+      <p>Like many early-stage companies, Chairish had built its financial infrastructure while simultaneously growing the business. The accounting records supported internal needs, but an external audit required a different level of documentation, consistency, and evidence.</p>
+      <p>The audit also had to be completed within the broader timeline of the debt raise. Any delay could have slowed the financing process at a time when the company was relying on access to capital to support its plans.</p>
+
+      <h2>The Stakes</h2>
+      <p>The audit was not simply an accounting requirement — it was part of establishing institutional credibility with a prospective lender. If the company could not produce reliable financial statements and supporting documentation, it risked delaying the $15 million financing, receiving less favorable terms, or revealing control issues late in the process when they would be hardest to address.</p>
+      <p>At the same time, the finance team still needed to manage its normal reporting, forecasting, payroll, payment, and operating responsibilities. My role was to create structure around the audit and keep the work moving toward the financing timeline.</p>
+
+      <h2>My Diagnosis</h2>
+
+      <h3>1. Identify likely diligence requirements</h3>
+      <p>I mapped the areas an external audit team and lender would be most likely to examine — revenue recognition, cash, accounts payable, accrued expenses, payroll, equity, tax obligations, marketplace transactions, cutoff procedures, significant contracts, and financial statement presentation — and used this to identify which schedules, reconciliations, and supporting documents would need to be prepared.</p>
+
+      <h3>2. Assess gaps before the audit began</h3>
+      <p>I reviewed the company's financial records to determine where additional support or cleanup might be required. The objective was to identify issues internally rather than allow them to emerge for the first time during lender diligence — finding accounts not fully reconciled, historical transactions with limited documentation, accounting policies not formally written, and inconsistencies between systems.</p>
+
+      <h3>3. Select an audit partner</h3>
+      <p>Chairish needed an audit firm that understood high-growth companies and could work within the financing timeline. I had previously worked in public accounting and understood both how audit teams operated and what made a company easier to audit. I leveraged relationships from my former employer to introduce the firm to Chairish and help evaluate whether it would be the right partner.</p>
+
+      <div class="callout">
+        <strong>Prior audit experience as an asset:</strong> My familiarity with how auditors think allowed me to act as a translator between the company and the external team — anticipating follow-up questions and understanding the evidence the audit team would need before they asked for it.
+      </div>
+
+      <h2>The Approach</h2>
+
+      <h3>Building an audit-readiness plan</h3>
+      <p>I created a project plan organized around the major audit areas, required documents, responsible owners, and due dates — tracking what the auditors needed, which internal person owned it, where the supporting data lived, whether the information required review, when it had to be delivered, and which open questions could affect the financing timeline.</p>
+
+      <h3>Preparing financial support</h3>
+      <p>I coordinated the preparation of account reconciliations, schedules, contracts, reports, and transaction support. Where records were incomplete or inconsistent, I worked with the relevant teams to reconstruct the necessary support and resolve discrepancies. I also reviewed materials before they were delivered to the auditors — because a poorly prepared response often led to additional questions, greater audit effort, and longer timelines.</p>
+
+      <h3>Coordinating across the company</h3>
+      <p>Although finance owned the audit, the required information came from across the organization — legal, HR, operations, sales, engineering, executive leadership, and external tax and accounting providers. My role was to make each request understandable, set clear deadlines, and prevent the audit from becoming an unstructured interruption for the rest of the company.</p>
+
+      <h3>Managing issues and decisions</h3>
+      <p>As questions arose, I helped determine whether they represented a documentation gap, a process weakness, an accounting judgment, a potential adjustment, or a broader control issue. I coordinated discussions between management and the auditors, gathered the relevant facts, and helped ensure decisions were documented.</p>
+
+      <h3>Connecting the audit to the financing process</h3>
+      <p>The audit was only one workstream within the debt raise. I kept the finance and leadership teams informed of progress, open issues, and potential timing risks so that the broader financing plan could be managed realistically — allowing leadership to distinguish between routine audit questions and issues that could affect the lender's decision or timeline.</p>
+
+      <hr class="cs-divider">
+
+      <h2>The Outcome</h2>
+
+      <div class="outcome-block">
+        <h3>Key result</h3>
+        <div class="big-stat">$15M</div>
+        <div class="stat-label">Debt facility closed, supported by completed audit</div>
+      </div>
+
+      <p>Chairish completed the audit required to support the $15 million debt raise. The process gave the company and its prospective lender greater confidence in the financial statements and underlying records. Additional lasting benefits included:</p>
+      <ul>
+        <li>Key accounts were supported by more consistent reconciliations</li>
+        <li>Financial documentation became more organized and accessible</li>
+        <li>Significant accounting policies and judgments were better documented</li>
+        <li>Finance developed a clearer process for responding to external diligence</li>
+        <li>The company identified areas where internal controls could be strengthened</li>
+        <li>Leadership gained greater visibility into the requirements of institutional financing</li>
+        <li>The company established a relationship with an audit firm that could support future needs</li>
+      </ul>
+      <p>The audit was not only a financing requirement — it helped Chairish build financial infrastructure appropriate for a more mature company.</p>
+
+      <h2>What I Learned</h2>
+      <p>A company becomes financeable before it enters a financing process. An audit can validate the financial statements, but it cannot instantly create clean records, clear accounting policies, or disciplined operating processes. Those capabilities must be developed over time.</p>
+      <p>Managing an audit requires both technical understanding and operational judgment. The finance leader must know which issues are material, which requests can be delegated, which questions require executive attention, and how to keep the process from distracting the entire company.</p>
+      <p>At an early-stage company, fundraising readiness is not simply the ability to produce an investor deck. It is the ability to support the story in that deck with reliable financial information.</p>
+
+    </div>
+  </div>
+
+  <div class="next-cases">
+    <div class="wrap">
+      <p class="section-label">More case studies</p>
+      <a class="next-link" href="case-study-chairish.html">
+        <span class="tag">FINANCE & DECISION SYSTEMS</span>
+        <h3>Building Financial Visibility at a Series A Marketplace</h3>
+      </a>
+      <a class="next-link" href="case-study-tax.html">
+        <span class="tag">FINANCE & DECISION SYSTEMS</span>
+        <h3>Reducing $2 Million in Marketplace Tax Risk</h3>
+      </a>
+      <a class="next-link" href="case-study-insource.html">
+        <span class="tag">FINANCE & DECISION SYSTEMS</span>
+        <h3>Bringing Finance Operations In-House and Saving $200,000 Annually</h3>
+      </a>
+      <a class="next-link" href="case-study-acquisition.html">
+        <span class="tag">BUSINESS MODELS & GROWTH</span>
+        <h3>Evaluating and Integrating the Acquisition of Dering Hall</h3>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="footer-row">
+        <div class="footer-links">
+          <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="https://www.linkedin.com/in/cindybalaji/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:cindybalaji@gmail.com">Email</a>
+        </div>
+        <div class="footer-note">&copy; 2025 Cindy Balaji</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
