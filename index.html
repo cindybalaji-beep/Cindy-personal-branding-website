@@ -1,372 +1,328 @@
 <!DOCTYPE html>
-<!--
-  CINDY BALAJI — PERSONAL SITE
-  ============================
-  HOW TO USE THIS FILE:
-  1. This is a single, self-contained HTML file — no build step needed.
-  2. Drop it into your GitHub Pages repo as `index.html` (replacing whatever's there).
-  3. Search for "EDIT:" comments throughout — those mark the spots to swap in
-     your real content (posts, bio, links, email).
-  4. Every article link has a placeholder Substack URL. Search for
-     "PASTE-SUBSTACK-URL" to find every spot that needs your real post link
-     once it's published. Until you update it, it safely points to your
-     Substack homepage instead of a broken link.
--->
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D11C47B13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8D11C47B13');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cindy Balaji</title>
-<meta name="description" content="Cindy Balaji — writing on AI, business, and the gap between credentials and capability.">
-<link rel="icon" type="image/jpeg" href="selfie.jpg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8D11C47B13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8D11C47B13');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cindy Balaji</title>
+  <meta name="description" content="Cindy Balaji — operator, writer, and strategic thought partner for mission-driven founders.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --paper: #FCFCFA;
-    --paper-alt: #F5F2E9;
-    --ink: #1B1A17;
-    --ink-soft: #55524A;
-    --ink-faint: #8A8678;
-    --ledger: #1F4D3A;
-    --ledger-soft: #E7EEEA;
-    --brass: #9C7A3C;
-    --line: #E4E0D3;
-
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --mono: 'IBM Plex Mono', 'Courier New', monospace;
-  }
-
-  * { box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a { color: var(--ledger); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  a:hover { color: var(--ink); }
-
-  .wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ---------- HEADER ---------- */
-
-  header.site {
-    padding: 56px 0 40px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .site-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px 24px;
-  }
-
-  .site-name {
-    font-family: var(--serif);
-    font-size: 26px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  /* ---------- SITE PHOTO ---------- */
-
-  .site-photo {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center top;
-    border: 2px solid var(--line);
-  }
-
-  /* ---------- NAV ---------- */
-
-  nav.site-nav {
-    margin-top: 22px;
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    font-family: var(--mono);
-    font-size: 13px;
-    flex-wrap: wrap;
-  }
-
-  nav.site-nav a {
-    color: var(--ink-soft);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-  }
-  nav.site-nav a:hover {
-    color: var(--ledger);
-    border-bottom-color: var(--ledger);
-  }
-
-  /* ---------- HERO ---------- */
-
-  section.hero {
-    padding: 64px 0 56px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 500;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    margin: 0 0 20px;
-  }
-
-  .hero p {
-    font-size: 17px;
-    color: var(--ink-soft);
-    max-width: 52ch;
-    margin: 0;
-  }
-
-  /* ---------- SECTION LABELS ---------- */
-
-  .section-label {
-    font-family: var(--mono);
-    font-size: 12.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-faint);
-    margin: 0 0 28px;
-  }
-
-  /* ---------- START HERE ---------- */
-
-  section.start-here {
-    background: var(--paper-alt);
-    padding: 56px 0;
-  }
-
-  .pick {
-    display: block;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-    text-decoration: none;
-    color: inherit;
-  }
-  .pick:first-of-type { padding-top: 0; }
-  .pick:last-of-type { border-bottom: none; padding-bottom: 0; }
-
-  .pick .tag {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.06em;
-    color: var(--ledger);
-    display: inline-block;
-    margin-bottom: 8px;
-  }
-
-  .pick h3 {
-    font-family: var(--serif);
-    font-size: 21px;
-    font-weight: 500;
-    margin: 0 0 6px;
-    color: var(--ink);
-    line-height: 1.35;
-  }
-
-  .pick p {
-    margin: 0;
-    font-size: 15px;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- CASE STUDIES ---------- */
-
-  section.case-studies {
-    padding: 56px 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .case-studies .section-sub {
-    font-size: 15px;
-    color: var(--ink-soft);
-    margin: -16px 0 28px;
-    max-width: 54ch;
-  }
-
-  article.case {
-    padding: 26px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  article.case:first-of-type { padding-top: 0; }
-
-  .case-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.04em;
-  }
-
-  .case-meta .tag { color: var(--ledger); }
-  .case-meta .date { color: var(--ink-faint); }
-  .case-meta .dot { color: var(--ink-faint); }
-
-  article.case h3 {
-    font-family: var(--serif);
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0 0 6px;
-    line-height: 1.35;
-  }
-
-  article.case h3 a { color: var(--ink); text-decoration: none; }
-  article.case h3 a:hover { color: var(--ledger); }
-
-  article.case p.dek {
-    margin: 0;
-    font-size: 15px;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- ALL WRITING FEED ---------- */
-
-  section.feed {
-    padding: 56px 0;
-  }
-
-  article.post {
-    padding: 26px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  article.post:first-of-type { padding-top: 0; }
-
-  .post-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.04em;
-  }
-
-  .post-meta .tag { color: var(--ledger); }
-  .post-meta .tag.essay { color: var(--brass); }
-  .post-meta .date { color: var(--ink-faint); }
-  .post-meta .dot { color: var(--ink-faint); }
-
-  article.post h3 {
-    font-family: var(--serif);
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0 0 6px;
-    line-height: 1.35;
-  }
-
-  article.post h3 a { color: var(--ink); text-decoration: none; }
-  article.post h3 a:hover { color: var(--ledger); }
-
-  article.post p.dek {
-    margin: 0;
-    font-size: 15px;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- ABOUT ---------- */
-
-  section.about {
-    padding: 56px 0;
-    background: var(--ledger-soft);
-  }
-
-  .about p {
-    font-size: 16px;
-    color: var(--ink);
-    max-width: 58ch;
-  }
-
-  .about p.byline {
-    font-family: var(--mono);
-    font-size: 12.5px;
-    color: var(--ledger);
-    margin-bottom: 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  /* ---------- FOOTER ---------- */
-
-  footer.site {
-    padding: 40px 0 64px;
-  }
-
-  .footer-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    font-family: var(--mono);
-    font-size: 13px;
-  }
-
-  .footer-links { display: flex; gap: 20px; }
-  .footer-links a { color: var(--ink-soft); text-decoration: none; }
-  .footer-links a:hover { color: var(--ledger); }
-
-  .footer-note { color: var(--ink-faint); }
-
-  /* ---------- FOCUS STATES ---------- */
-
-  a:focus-visible {
-    outline: 2px solid var(--ledger);
-    outline-offset: 2px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-  }
-
-  @media (max-width: 520px) {
-    header.site, section.hero, section.start-here, section.case-studies, section.feed, section.about, footer.site {
-      padding-top: 40px;
-      padding-bottom: 40px;
+  <style>
+    :root {
+      --paper:       #FCFCFA;
+      --paper-alt:   #F5F2E9;
+      --ink:         #1B1A17;
+      --ink-soft:    #55524A;
+      --ink-faint:   #8A8678;
+      --ledger:      #1F4D3A;
+      --ledger-soft: #E7EEEA;
+      --brass:       #9C7A3C;
+      --line:        #E4E0D3;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:  'IBM Plex Mono', 'Courier New', monospace;
     }
-  }
-</style>
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--ledger); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--ink); }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── HEADER ── */
+    header.site {
+      padding: 40px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
+
+    .site-name {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .site-name span { color: var(--ink); }
+
+    .site-photo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 1.5px solid var(--line);
+    }
+
+    nav.site-nav {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: var(--mono);
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+    nav.site-nav a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
+    nav.site-nav a:hover { color: var(--ledger); border-bottom-color: var(--ledger); }
+
+    /* ── HERO — Hannah Zhang inspired ── */
+    section.hero {
+      padding: 64px 0 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-roles {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 10px;
+    }
+    .hero-roles span { margin: 0 6px; opacity: 0.5; }
+
+    .hero-name {
+      font-family: var(--sans);
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 0 0 24px;
+      white-space: nowrap;
+    }
+    .hero-name .last { color: var(--ink); }
+
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: clamp(16px, 2.2vw, 20px);
+      font-weight: 300;
+      color: var(--ink-soft);
+      max-width: 48ch;
+      line-height: 1.5;
+      margin: 0 0 10px;
+    }
+
+    .hero-location {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--ink-faint);
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary { background: var(--ink); color: var(--paper); }
+    .btn-primary:hover { background: #3a3730; color: var(--paper); }
+    .btn-outline { border: 1.5px solid var(--ink); color: var(--ink); }
+    .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+      margin: 0 0 24px;
+    }
+
+    /* ── START HERE ── */
+    section.start-here {
+      background: var(--paper-alt);
+      padding: 52px 0;
+    }
+
+    .pick {
+      display: block;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.15s;
+    }
+    .pick:first-of-type { padding-top: 0; }
+    .pick:last-of-type { border-bottom: none; padding-bottom: 0; }
+    .pick:hover { opacity: 0.7; }
+
+    .pick .tag {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      color: var(--ledger);
+      display: inline-block;
+      margin-bottom: 7px;
+    }
+    .pick h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      margin: 0 0 5px;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+    .pick p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+    /* ── CASE STUDIES ── */
+    section.case-studies {
+      padding: 52px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .case-studies .section-sub {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: -12px 0 24px;
+      max-width: 54ch;
+    }
+    article.case {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    article.case:first-of-type { padding-top: 0; }
+    article.case:last-of-type { border-bottom: none; }
+    .case-meta {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 7px;
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em;
+    }
+    .case-meta .tag { color: var(--ledger); }
+    .case-meta .date, .case-meta .dot { color: var(--ink-faint); }
+    article.case h3 {
+      font-family: var(--serif); font-size: 19px; font-weight: 500;
+      margin: 0 0 5px; line-height: 1.35;
+    }
+    article.case h3 a { color: var(--ink); text-decoration: none; }
+    article.case h3 a:hover { color: var(--ledger); }
+    article.case p.dek { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+    /* ── WRITING FEED ── */
+    section.feed { padding: 52px 0; }
+    article.post { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    article.post:first-of-type { padding-top: 0; }
+    article.post:last-of-type { border-bottom: none; }
+    .post-meta {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 7px;
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em;
+    }
+    .post-meta .tag { color: var(--ledger); }
+    .post-meta .tag.essay { color: var(--brass); }
+    .post-meta .date, .post-meta .dot { color: var(--ink-faint); }
+    article.post h3 {
+      font-family: var(--serif); font-size: 19px; font-weight: 500;
+      margin: 0 0 5px; line-height: 1.35;
+    }
+    article.post h3 a { color: var(--ink); text-decoration: none; }
+    article.post h3 a:hover { color: var(--ledger); }
+    article.post p.dek { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+    /* ── ABOUT ── */
+    section.about {
+      padding: 52px 0;
+      background: var(--ledger-soft);
+    }
+    .about p {
+      font-size: 15px;
+      color: var(--ink);
+      max-width: 58ch;
+      margin: 0 0 14px;
+    }
+    .about p:last-child { margin: 0; }
+    .about p.byline {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--ledger);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── FOOTER ── */
+    footer.site { padding: 36px 0 56px; }
+    .footer-row {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 14px;
+      font-family: var(--mono); font-size: 12px;
+    }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { color: var(--ink-soft); text-decoration: none; }
+    .footer-links a:hover { color: var(--ledger); }
+    .footer-note { color: var(--ink-faint); }
+
+    /* ── ACCESSIBILITY ── */
+    a:focus-visible { outline: 2px solid var(--ledger); outline-offset: 2px; }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    @media (max-width: 520px) {
+      section.hero { padding: 44px 0 40px; }
+      .hero-name { margin-bottom: 18px; }
+      section.start-here, section.case-studies, section.feed, section.about, footer.site {
+        padding-top: 36px; padding-bottom: 36px;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <header class="site">
     <div class="wrap">
       <div class="site-top">
-        <div class="site-name">Cindy Balaji</div>
+        <a href="/" class="site-name">Cindy <span>Balaji</span></a>
         <img src="selfie.jpg" alt="Cindy Balaji" class="site-photo">
       </div>
       <nav class="site-nav">
@@ -382,8 +338,18 @@
 
   <section class="hero">
     <div class="wrap">
-      <h1>I help mission-driven founders build meaningful companies through strategy, finance, and operations.</h1>
-      <p>I’m a CPA, Booth MBA, and startup operator with experience across strategic finance, consulting, and corporate strategy. I write about building companies, human behavior at work, and the future of knowledge work.</p>
+      <div class="hero-roles">
+        Strategy <span>·</span> Finance <span>·</span> Operations <span>·</span> Writing
+      </div>
+      <div class="hero-name">
+        Cindy <span class="last">Balaji.</span>
+      </div>
+      <p class="hero-tagline">I help founders think more clearly, move faster, and build something that lasts.</p>
+      <p class="hero-location">Based in San Francisco.</p>
+      <div class="hero-btns">
+        <a href="mailto:cindybalaji@gmail.com" class="btn btn-primary">Work with me</a>
+        <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener" class="btn btn-outline">Read my writing</a>
+      </div>
     </div>
   </section>
 
@@ -391,19 +357,19 @@
     <div class="wrap">
       <p class="section-label">Start here</p>
 
-      <a class="pick" href="PASTE-SUBSTACK-URL-1">
-        <span class="tag">CASE STUDY</span>
-        <h3>Allbirds Isn't a Shoe Company Anymore — Here's What Actually Changed</h3>
-        <p>The headline everyone saw. The mechanics nobody explained.</p>
+      <a class="pick" href="https://cindybalaji.substack.com/p/the-finance-function-is-about-to" target="_blank" rel="noopener">
+        <span class="tag">INDUSTRY</span>
+        <h3>The Finance Function Is About to Look Nothing Like It Does Today</h3>
+        <p>And most finance teams aren't ready for it.</p>
       </a>
 
-      <a class="pick" href="PASTE-SUBSTACK-URL-2">
-        <span class="tag">INDUSTRY</span>
+      <a class="pick" href="https://cindybalaji.substack.com" target="_blank" rel="noopener">
+        <span class="tag">CASE STUDY</span>
         <h3>PropTech's Quiet AI Takeover</h3>
         <p>What legacy real estate software isn't telling you about the disruption already underway.</p>
       </a>
 
-      <a class="pick" href="PASTE-SUBSTACK-URL-3">
+      <a class="pick" href="https://cindybalaji.substack.com" target="_blank" rel="noopener">
         <span class="tag">ESSAY</span>
         <h3>Sindhuri, Not Cindy</h3>
         <p>What I gave up to fit in — and what I'm trying to get back.</p>
@@ -414,51 +380,61 @@
   <section class="case-studies" id="case-studies">
     <div class="wrap">
       <p class="section-label">Case studies</p>
-      <p class="section-sub">Deep dives into how real companies are actually pivoting to AI — the mechanics behind the headlines, not just the announcement.</p>
+      <p class="section-sub">Structured proof of work, organized by capability — not by employer.</p>
 
       <article class="case">
         <div class="case-meta">
-          <span class="tag">CASE STUDY</span>
+          <span class="tag">FINANCE & DECISION SYSTEMS</span>
           <span class="dot">·</span>
-          <span class="date">Jul 2026</span>
+          <span class="date">Chairish · Series A</span>
         </div>
-        <h3><a href="PASTE-SUBSTACK-URL-4">Allbirds Isn't a Shoe Company Anymore</a></h3>
-        <p class="dek">The headline everyone saw. The mechanics nobody explained.</p>
+        <h3><a href="case-study-chairish.html">Building Financial Visibility at a Series A Marketplace</a></h3>
+        <p class="dek">How I rebuilt a marketplace financial model from the bottom up, corrected a revenue recognition issue, and improved forecast accuracy from 75% to 90%.</p>
       </article>
 
       <article class="case">
         <div class="case-meta">
-          <span class="tag">CASE STUDY</span>
+          <span class="tag">AI & OPERATING TRANSFORMATION</span>
           <span class="dot">·</span>
-          <span class="date">Jun 2026</span>
+          <span class="date">Coming soon</span>
         </div>
-        <h3><a href="PASTE-SUBSTACK-URL-5">PropTech's Quiet AI Takeover</a></h3>
-        <p class="dek">What legacy real estate software isn't telling you about the disruption already underway.</p>
+        <h3><a href="/#case-studies">Rebuilding FP&amp;A Workflows with AI</a></h3>
+        <p class="dek">Moving from manual reporting cycles to AI-assisted workflows — what changed, what didn't, and what it took to get the team there.</p>
+      </article>
+
+      <article class="case">
+        <div class="case-meta">
+          <span class="tag">BUSINESS MODELS & GROWTH</span>
+          <span class="dot">·</span>
+          <span class="date">Coming soon</span>
+        </div>
+        <h3><a href="/#case-studies">Diagnosing a Two-Sided Marketplace</a></h3>
+        <p class="dek">A framework for identifying where marketplace health breaks down — and which side of the market to fix first.</p>
       </article>
     </div>
   </section>
 
   <section class="feed" id="writing">
     <div class="wrap">
-      <p class="section-label">All writing</p>
+      <p class="section-label">Essays — Thinking on Purpose</p>
 
       <article class="post">
         <div class="post-meta">
-          <span class="tag">CASE STUDY</span>
+          <span class="tag">INDUSTRY</span>
           <span class="dot">·</span>
-          <span class="date">Jul 2026</span>
+          <span class="date">Jul 2025</span>
         </div>
-        <h3><a href="PASTE-SUBSTACK-URL-6">Allbirds Isn't a Shoe Company Anymore</a></h3>
-        <p class="dek">The headline everyone saw. The mechanics nobody explained.</p>
+        <h3><a href="https://cindybalaji.substack.com/p/the-finance-function-is-about-to" target="_blank" rel="noopener">The Finance Function Is About to Look Nothing Like It Does Today</a></h3>
+        <p class="dek">And most finance teams aren't ready for it.</p>
       </article>
 
       <article class="post">
         <div class="post-meta">
           <span class="tag essay">ESSAY</span>
           <span class="dot">·</span>
-          <span class="date">Jul 2026</span>
+          <span class="date">Coming soon</span>
         </div>
-        <h3><a href="PASTE-SUBSTACK-URL-7">Sindhuri, Not Cindy</a></h3>
+        <h3><a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Sindhuri, Not Cindy</a></h3>
         <p class="dek">What I gave up to fit in — and what I'm trying to get back.</p>
       </article>
 
@@ -466,9 +442,9 @@
         <div class="post-meta">
           <span class="tag">INDUSTRY</span>
           <span class="dot">·</span>
-          <span class="date">Jun 2026</span>
+          <span class="date">Coming soon</span>
         </div>
-        <h3><a href="PASTE-SUBSTACK-URL-8">PropTech's Quiet AI Takeover</a></h3>
+        <h3><a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">PropTech's Quiet AI Takeover</a></h3>
         <p class="dek">What legacy real estate software isn't telling you about the disruption already underway.</p>
       </article>
 
@@ -476,9 +452,9 @@
         <div class="post-meta">
           <span class="tag essay">ESSAY</span>
           <span class="dot">·</span>
-          <span class="date">Jun 2026</span>
+          <span class="date">Coming soon</span>
         </div>
-        <h3><a href="PASTE-SUBSTACK-URL-9">The Test I Never Failed, Until I Did</a></h3>
+        <h3><a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">The Test I Never Failed, Until I Did</a></h3>
         <p class="dek">On being great at school and bad at knowing what I actually wanted.</p>
       </article>
 
@@ -486,9 +462,9 @@
         <div class="post-meta">
           <span class="tag">DEMO</span>
           <span class="dot">·</span>
-          <span class="date">Jun 2026</span>
+          <span class="date">Coming soon</span>
         </div>
-        <h3><a href="PASTE-SUBSTACK-URL-10">The Old Way vs. the AI Way: Building an FP&A Model</a></h3>
+        <h3><a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">The Old Way vs. the AI Way: Building an FP&amp;A Model</a></h3>
         <p class="dek">A side-by-side of what used to take a week, now done in an afternoon.</p>
       </article>
     </div>
@@ -497,7 +473,8 @@
   <section class="about" id="about">
     <div class="wrap">
       <p class="byline">About</p>
-      <p>I'm a CPA by training, a recovering by-the-book test-taker by temperament, and currently spending my hours figuring out how AI is actually changing finance, business, and strategy — not the headline version, the real one. I write here and on Substack, and occasionally get on camera to show my work.</p>
+      <p>I spent the first chapter of my career learning how businesses actually work — as a CPA, in corporate finance, and in strategy consulting. Now I'm in Chapter 2: working directly with founders and operators who are building something meaningful and need a first business operator hire to bridge the strategy and execution gap.</p>
+      <p><a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Read Thinking on Purpose on Substack →</a></p>
     </div>
   </section>
 
@@ -509,7 +486,7 @@
           <a href="https://www.linkedin.com/in/cindybalaji/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:cindybalaji@gmail.com">Email</a>
         </div>
-        <div class="footer-note">&copy; 2026 Cindy Balaji</div>
+        <div class="footer-note">&copy; 2025 Cindy Balaji</div>
       </div>
     </div>
   </footer>

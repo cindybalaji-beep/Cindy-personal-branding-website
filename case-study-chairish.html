@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8D11C47B13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8D11C47B13');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building Financial Visibility at a Series A Marketplace — Cindy Balaji</title>
+  <meta name="description" content="How I rebuilt a marketplace financial model from the bottom up, corrected a revenue recognition issue, and improved forecast accuracy from 75% to 90%.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:       #FCFCFA;
+      --paper-alt:   #F5F2E9;
+      --ink:         #1B1A17;
+      --ink-soft:    #55524A;
+      --ink-faint:   #8A8678;
+      --ledger:      #1F4D3A;
+      --ledger-soft: #E7EEEA;
+      --brass:       #9C7A3C;
+      --line:        #E4E0D3;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:  'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--ledger); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--ink); }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── HEADER ── */
+    header.site {
+      padding: 40px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .site-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
+    .site-name {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .site-photo {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 1.5px solid var(--line);
+    }
+    nav.site-nav {
+      margin-top: 16px;
+      display: flex; align-items: center; gap: 20px;
+      font-family: var(--mono); font-size: 12px; flex-wrap: wrap;
+    }
+    nav.site-nav a {
+      color: var(--ink-soft); text-decoration: none;
+      border-bottom: 1px solid transparent; padding-bottom: 2px;
+    }
+    nav.site-nav a:hover { color: var(--ledger); border-bottom-color: var(--ledger); }
+
+    /* ── CASE STUDY HEADER ── */
+    .cs-header {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cs-meta {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--mono); font-size: 11.5px;
+      letter-spacing: 0.06em; color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+    .cs-meta .tag { color: var(--ledger); }
+    .cs-meta .dot { color: var(--line); }
+
+    .cs-title {
+      font-family: var(--serif);
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0 0 20px;
+    }
+
+    .cs-dek {
+      font-size: 17px;
+      color: var(--ink-soft);
+      max-width: 54ch;
+      line-height: 1.6;
+      margin: 0 0 32px;
+    }
+
+    /* outcome pills */
+    .outcome-pills {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 6px 14px;
+      background: var(--ledger-soft);
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--ledger);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── BODY ── */
+    .cs-body {
+      padding: 56px 0 80px;
+    }
+
+    .cs-body h2 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 52px 0 16px;
+      letter-spacing: -0.01em;
+    }
+    .cs-body h2:first-child { margin-top: 0; }
+
+    .cs-body h3 {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 36px 0 12px;
+    }
+
+    .cs-body p {
+      font-size: 16px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      margin: 0 0 18px;
+      max-width: 62ch;
+    }
+
+    .cs-body p strong { color: var(--ink); font-weight: 600; }
+
+    .cs-body ul {
+      margin: 0 0 18px 0;
+      padding-left: 20px;
+    }
+    .cs-body ul li {
+      font-size: 16px;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-bottom: 6px;
+    }
+
+    /* figure */
+    .cs-figure {
+      margin: 28px 0;
+    }
+    .cs-figure figcaption {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--ink-faint);
+      margin-top: 10px;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+    }
+
+    /* equation callout */
+    .equation {
+      background: var(--paper-alt);
+      border-left: 3px solid var(--ledger);
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      line-height: 1.6;
+    }
+
+    /* divider */
+    .cs-divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 48px 0;
+    }
+
+    /* outcome block */
+    .outcome-block {
+      background: var(--ledger-soft);
+      border-radius: 4px;
+      padding: 28px 28px;
+      margin: 40px 0;
+    }
+    .outcome-block h3 {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ledger);
+      margin: 0 0 16px;
+    }
+    .outcome-block .big-stat {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .outcome-block .stat-label {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 20px;
+    }
+
+    /* ── NEXT CASES ── */
+    .next-cases {
+      border-top: 1px solid var(--line);
+      padding: 40px 0 64px;
+    }
+    .next-cases .section-label {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+      margin: 0 0 24px;
+    }
+    .next-link {
+      display: block;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.15s;
+    }
+    .next-link:last-child { border-bottom: none; }
+    .next-link:hover { opacity: 0.65; }
+    .next-link .tag {
+      font-family: var(--mono); font-size: 10.5px;
+      letter-spacing: 0.08em; color: var(--ledger);
+      display: block; margin-bottom: 6px;
+    }
+    .next-link h3 {
+      font-family: var(--serif); font-size: 18px;
+      font-weight: 500; color: var(--ink);
+      margin: 0; line-height: 1.35;
+    }
+
+    /* ── FOOTER ── */
+    footer.site { padding: 36px 0 56px; border-top: 1px solid var(--line); }
+    .footer-row {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 14px;
+      font-family: var(--mono); font-size: 12px;
+    }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { color: var(--ink-soft); text-decoration: none; }
+    .footer-links a:hover { color: var(--ledger); }
+    .footer-note { color: var(--ink-faint); }
+
+    a:focus-visible { outline: 2px solid var(--ledger); outline-offset: 2px; }
+
+    @media (max-width: 520px) {
+      .cs-header { padding: 44px 0 36px; }
+      .cs-body { padding: 40px 0 56px; }
+      .outcome-block { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <div class="site-top">
+        <a href="/" class="site-name">Cindy Balaji</a>
+        <img src="selfie.jpg" alt="Cindy Balaji" class="site-photo">
+      </div>
+      <nav class="site-nav">
+        <a href="/#start-here">Start Here</a>
+        <a href="/#case-studies">Case Studies</a>
+        <a href="/#writing">Writing</a>
+        <a href="/#about">About</a>
+        <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Subscribe</a>
+        <a href="mailto:cindybalaji@gmail.com">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CASE STUDY HEADER -->
+  <div class="cs-header">
+    <div class="wrap">
+      <div class="cs-meta">
+        <span class="tag">FINANCE & DECISION SYSTEMS</span>
+        <span class="dot">·</span>
+        <span>Chairish · Series A Marketplace</span>
+      </div>
+      <h1 class="cs-title">Building Financial Visibility at a Series A Marketplace</h1>
+      <p class="cs-dek">How I rebuilt a marketplace financial model from the bottom up, corrected a revenue recognition issue, and improved forecast accuracy from 75% to 90%.</p>
+      <div class="outcome-pills">
+        <span class="pill">Forecast accuracy: 75% → 90%</span>
+        <span class="pill">Revenue recognition corrected</span>
+        <span class="pill">Cross-functional KPI alignment</span>
+        <span class="pill">Series A · Consumer marketplace</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="cs-body">
+    <div class="wrap">
+
+      <h2>The Business Context</h2>
+      <p>Chairish was a rapidly growing Series A marketplace for vintage and high-end furniture. As transaction volume, headcount, and operational complexity increased, the financial processes that had worked at an earlier stage were no longer sufficient.</p>
+      <p>The company had a detailed financial model, but most monthly conversations focused on the income statement, balance sheet, cash flow, and top-line run rate. Those views explained what had happened financially — but not why it had happened, or which operating decisions would influence future performance.</p>
+      <p>To grow more sophisticated, we needed to connect the financial forecast to the underlying drivers of a consumer marketplace.</p>
+
+      <h2>The Problem</h2>
+      <p>Our revenue forecast was primarily based on historical growth rates and high-level assumptions. It was not yet tied to the operating metrics that actually influenced marketplace performance: customer acquisition, conversion, purchase frequency, average order value, and take rate.</p>
+      <p>This created a gap between the financial model and the way teams operated the business.</p>
+      <p>Marketing tracked campaign performance. The data team maintained transaction and customer data. Finance reported monthly results. But these functions did not share one consistent view of how marketing activity translated into buyers, orders, GMV, marketplace revenue, and contribution margin.</p>
+      <p>The model also needed to better account for the economics of an ecommerce marketplace. Payment-processing fees, shipping charges and subsidies, returns, and customer-support costs could materially affect contribution margin even when top-line performance appeared strong.</p>
+      <p>The problem was not a lack of data. It was that the data, operating assumptions, accounting treatment, and financial forecast were not connected in a way that supported decision-making.</p>
+
+      <h2>The Stakes</h2>
+      <p>Chairish had strong growth and healthy momentum — which made it especially important to understand what was driving it. Our investors and executive team were beginning to ask more sophisticated questions:</p>
+      <ul>
+        <li>How much growth could be generated from additional marketing investment?</li>
+        <li>Which acquisition channels produced the most valuable buyers?</li>
+        <li>How much activity came from new versus repeat buyers?</li>
+        <li>Which assumptions had the greatest effect on the forecast?</li>
+        <li>Could the business continue growing without costs increasing at the same rate?</li>
+      </ul>
+      <p>Finance could explain the monthly financial results, but it was harder to confidently explain the operating drivers behind a variance — or quantify the effect of a particular decision. Without greater clarity, the company risked making hiring and spending decisions based on incomplete information, and entering investor conversations without a sufficiently data-backed explanation of its growth model.</p>
+
+      <h2>My Approach</h2>
+
+      <h3>1. Reconstruct the revenue model from the bottom up</h3>
+      <p>I began by working backward from marketplace revenue. Rather than starting with a top-line growth percentage, I asked what had to occur operationally for the company to generate revenue.</p>
+
+      <div class="equation">
+        Traffic × conversion rate × average order value × take rate
+      </div>
+
+      <figure class="cs-figure">
+        <img src="marketplace-diagram.png" alt="From Marketing Spend to Contribution Margin — how value is created in a marketplace" style="width:100%;border-radius:4px;border:1px solid var(--line);">
+        <figcaption>The full value chain from marketing spend to contribution margin — and the key drivers at each stage.</figcaption>
+      </figure>
+
+      <p>That equation was only the starting point. To make the forecast useful, I needed to understand the behaviors beneath each input — customer acquisition by channel, acquisition cost, conversion timing, new versus repeat buyers, purchase frequency, cohort behavior, GMV, take rate, discounts, refunds, and delivery type differences.</p>
+      <p>I then connected those revenue drivers to the variable costs generated by each transaction: payment-processing fees, shipping subsidies, returns, customer support, and other direct costs. This allowed us to move beyond a simple revenue forecast and begin evaluating contribution margin and customer economics.</p>
+      <p>The objective was not to include every available metric. It was to identify the small number of drivers that meaningfully explained financial performance and could be influenced by operating teams.</p>
+
+      <h3>2. Identify a revenue recognition issue</h3>
+      <p>Reconstructing the model from the bottom up caused us to reconsider how the company accounted for shipping. As I traced the economics of an individual order, I discovered an important inconsistency: Chairish was collecting shipping charges from customers and recording the full amount as revenue, even though most of that amount was passed on to third-party shipping providers.</p>
+      <p>I worked with the accounting team to evaluate the arrangement under the principal-versus-agent guidance in ASC 606 — assessing whether Chairish controlled the shipping service before it was provided to the customer, bore fulfillment risk, and had pricing discretion.</p>
+      <p>Our analysis indicated that Chairish was primarily arranging for third-party carriers to provide the transportation service. We therefore concluded that Chairish was acting as an <strong>agent</strong> rather than a principal for the applicable shipping activity.</p>
+      <p>We changed the accounting methodology from gross to net presentation. The change reduced reported gross revenue — but produced a more accurate view of the company's actual economics, improved comparability across periods, and ensured that revenue growth was not being influenced by changes in pass-through shipping collections.</p>
+      <p>The discovery reinforced why starting from the income statement was insufficient. Reconstructing the business one transaction at a time surfaced not only better operating metrics, but an accounting treatment that had been obscuring the company's underlying performance.</p>
+
+      <h3>3. Establish shared definitions with Marketing</h3>
+      <p>Once I identified the inputs that should drive the model, I met with the marketing team to align on how each metric was measured. This step revealed that agreeing on the name of a metric was not the same as agreeing on its definition.</p>
+      <p>We needed alignment on questions such as: Did customer acquisition cost include only media spend or also agency and creative costs? Was a new buyer someone placing a first order or someone creating an account? Which date determined the reporting period — ad click, order placement, or completed transaction?</p>
+      <p>I documented the agreed definitions and ensured finance and marketing were using the same methodology. This reduced the risk that teams would present different versions of the same KPI in executive or board discussions — and turned the budgeting process into a more useful operating conversation.</p>
+
+      <h3>4. Validate the data with Analytics and Engineering</h3>
+      <p>I then partnered with the data analytics team to determine whether the required information was available, reliable, and consistently reported. We discovered that we could not yet reliably calculate cohort-based repeat purchase rates or contribution margin by delivery segment.</p>
+      <p>I coordinated with data and engineering to define the required fields, identify source-system issues, prioritize the work, and establish reporting timelines. My role was not to build the technical pipeline — it was to translate the financial use case into clear data requirements and keep the cross-functional work moving.</p>
+
+      <h3>5. Redesign the model and establish a feedback loop</h3>
+      <p>Once the initial data pipeline was established, I simplified the financial model from approximately 15 interconnected tabs into five core sections: the three financial statements, marketplace and marketing KPIs, raw and processed data inputs, key operating assumptions, and scenario and forecast outputs.</p>
+      <p>The purpose of the redesign was not to reduce the number of tabs. It was to make the relationship between assumptions and financial outcomes easier to understand — so leadership could see how changes in acquisition cost, conversion, order frequency, or repeat purchasing affected GMV, revenue, contribution margin, and cash.</p>
+      <p>I also developed cohort-based repeat-purchase modeling that accounted for the timing of purchases and avoided treating every customer who had not recently purchased as permanently churned.</p>
+      <p>Finally, we established a weekly working session between finance and marketing, focused on actual performance against budget, acquisition efficiency, changes in conversion and order behavior, and how new information should affect the forecast. This created a recurring feedback loop between operating activity and financial planning.</p>
+
+      <hr class="cs-divider">
+
+      <h2>The Outcome</h2>
+
+      <div class="outcome-block">
+        <h3>Key result</h3>
+        <div class="big-stat">75% → 90%</div>
+        <div class="stat-label">Forecast accuracy improvement, measured against actual revenue</div>
+      </div>
+
+      <p>The remaining variance largely reflected normal volatility in a consumer marketplace rather than a lack of visibility into the business.</p>
+      <p>More importantly, the company gained a clearer understanding of how marketing investment translated into marketplace activity and revenue. Additional outcomes included:</p>
+      <ul>
+        <li>Finance could explain the operating drivers behind monthly revenue variances</li>
+        <li>Marketing could evaluate spending in the context of revenue and customer economics</li>
+        <li>Leadership could model the effects of changes in acquisition cost, conversion, order value, and repeat purchasing</li>
+        <li>Consistent KPI definitions were established across finance, marketing, and data</li>
+        <li>Finance became less dependent on manual analyses and one-off data requests</li>
+        <li>The company's investor materials were supported by a more credible operating model</li>
+        <li>Leadership invested in strengthening internal marketing-measurement expertise, reducing reliance on outside vendors</li>
+      </ul>
+      <p>The model became more than a finance document. It became a shared operating tool that helped the company allocate resources, assess growth initiatives, and prepare for the level of scrutiny expected as it moved toward its next stage of growth.</p>
+
+      <h2>What I Learned</h2>
+      <p>A startup's financial model becomes more valuable as it becomes more closely connected to the way the business actually operates. At an early stage, historical growth rates and top-line assumptions may be sufficient. As the company grows, leadership needs to understand the mechanisms behind that growth.</p>
+      <p>Building a sophisticated forecast is a cross-functional exercise. Finance may own the model, but marketing understands acquisition behavior, data teams understand the reliability of the inputs, engineering enables the reporting infrastructure, and operating leaders determine which assumptions can realistically be changed.</p>
+      <p>The shipping analysis reinforced a related lesson: a financial model should not simply reproduce the company's existing accounting outputs. It should help test whether those outputs accurately reflect the underlying economics of the business.</p>
+      <p>The most useful model is not necessarily the one with the greatest number of inputs. It is the one that identifies the most important business drivers, makes assumptions visible, improves the integrity of the financial reporting, and helps the company decide where to invest its next dollar.</p>
+
+    </div>
+  </div>
+
+  <!-- NEXT CASES -->
+  <div class="next-cases">
+    <div class="wrap">
+      <p class="section-label">More case studies</p>
+      <a class="next-link" href="/#case-studies">
+        <span class="tag">COMING SOON</span>
+        <h3>AI & Operating Transformation</h3>
+      </a>
+      <a class="next-link" href="/#case-studies">
+        <span class="tag">COMING SOON</span>
+        <h3>Business Models & Growth</h3>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="footer-row">
+        <div class="footer-links">
+          <a href="https://cindybalaji.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="https://www.linkedin.com/in/cindybalaji/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:cindybalaji@gmail.com">Email</a>
+        </div>
+        <div class="footer-note">&copy; 2025 Cindy Balaji</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
